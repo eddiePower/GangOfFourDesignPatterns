@@ -10,10 +10,14 @@ namespace FactoryMethod
     {
         static void Main(string[] args)
         {
+            //create a factory of type IcreditUnion
             var factory = new SavingsAcctFactory() as ICreditUnionFactory;
+            //create a city savings account object by feeding in city string
             var citiAcct = factory.GetSavingsAccount("CITI-321");
+            //create national savings account by passing in national string to factory
             var nationalAcct = factory.GetSavingsAccount("NATIONAL-987");
 
+            //use formatted string by using $ and {} to display incline values.
             Console.WriteLine($"My citi balance is ${citiAcct.Balance}" +
                 $" and national balance is ${nationalAcct.Balance}");
         }
