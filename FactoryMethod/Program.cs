@@ -23,10 +23,11 @@ namespace FactoryMethod
     // Product  -  interface
     public abstract class ISavingsAccount
     {
+        //property
         public decimal Balance { get; set; }
     }
 
-    // Concrete Product
+    // Concrete Product inherits from iSavings
     public class CitiSavingsAcct : ISavingsAccount
     {
         public CitiSavingsAcct()
@@ -35,7 +36,7 @@ namespace FactoryMethod
         }
     }
 
-    // Concrete Product
+    // Concrete Product also inherits from iSaving
     public class NationalSavingsAcct : ISavingsAccount
     {
         public NationalSavingsAcct()
@@ -44,7 +45,7 @@ namespace FactoryMethod
         }
     }
 
-    // Creator
+    // Creator method interface
     interface ICreditUnionFactory
     {
         ISavingsAccount GetSavingsAccount(string acctNo);
